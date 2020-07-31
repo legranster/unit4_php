@@ -21,7 +21,10 @@ if(isset($_POST['key'])){
     <title>Phrase Hunter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/styles.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
@@ -52,4 +55,14 @@ if(isset($_POST['key'])){
     </div>
 </div>
 </body>
+<script>
+    const letters = document.getElementsByClassName("key");
+    addEventListener("keypress", (e) => {
+        for(let x=0; x < letters.length; x++){
+            if(e.key==letters[x].value){
+                letters[x].click();
+            }
+        }
+    })
+</script>
 </html>

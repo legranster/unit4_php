@@ -1,16 +1,17 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
 
 /* Variables */
 
 :root {
-  --color-win: #78CF82;
-  --color-lose: #D94545;
+  --color-win: #1e1cb3;
+  --color-lose: #671501;
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
+  --color-guessed-letter: #30a156;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -20,7 +21,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Rowdies', sans-serif;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background: linear-gradient(to right, var(--color-lose), var(--color-win) 70%); 
 }
 
 li, ol, ul {
@@ -92,7 +94,7 @@ input[type=submit].correct {
 /* Title */
 
 .header {
-  color: #3a3f58;
+  color: #E5E5E5;
 }
 
 
@@ -119,7 +121,7 @@ input[type=submit].correct {
 
 .show {
   color: #fff;
-  background-color: #4ac0d5;
+  background-color:var(--color-guessed-letter);
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -146,12 +148,12 @@ input[type=submit].correct {
 }
 
 .wrong {
-  background: #f7a964;
+  background: var(--color-lose);
   color: #FFFFFF;
 }
 
 .right {
-  background: #64f778;
+  background: var(--color-win);
   color: #FFFFFF;
 }
 
@@ -209,7 +211,7 @@ input[type=submit].correct {
 }
 
 .lose {
-  background-color: #f5785f;
+  background-color: var(--color-lose);
 }
 
 .lose a {

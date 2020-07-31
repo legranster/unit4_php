@@ -8,9 +8,8 @@ class Phrase
         'Julio is the best',
         'Banana Sandwich',
         'Cheese and crackers',
-        'Adrian Williams',
-        'Coronavirus',
-        'Whodat'
+        'Dance with me',
+        'Boombox'
         ];
 
     public function __construct($currentPhrase = "", $selected = [])
@@ -18,7 +17,7 @@ class Phrase
         if (!empty($currentPhrase)){
             $this->currentPhrase = $currentPhrase;
         } else {
-            $this->currentPhrase = $this->phrases[rand(0,4)];
+            $this->currentPhrase = $this->phrases[rand(0,count($this->phrases)-1)];
         }
 
         if (!empty($selected)){
@@ -33,7 +32,7 @@ class Phrase
         foreach($letters as $letter){
 
             if(isset($_SESSION['selected']) && in_array($letter, $_SESSION['selected'])){
-                $html .='<li class="show letter ' . $letter . '">';
+                $html .='<li class="show letter' . $letter . '">';
                 $html .= $letter;
                 $html .= '</li>';
             } elseif ($letter === " "){

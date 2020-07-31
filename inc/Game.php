@@ -39,7 +39,7 @@ class Game
         $topRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
         $middleRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'];
         $bottomRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm'];
-        $html = '<form action="play.php" method="post">';
+        $html = '<form action="play.php" method="post" id="keyboard">';
         $html .= '<div id="qwerty" class="section">';
         $html .= $this->constructKeyrow($topRow, $gamePhrase);
         $html .= $this->constructKeyrow($middleRow, $gamePhrase);
@@ -55,7 +55,7 @@ class Game
             if($i <= ($this->lives - $phrase->numberLost())){
                 $html .= '<li class="tries"><img src="images/liveHeart.png" height="35px" widght="30px"></li>';
             } else {
-                $html .= '<li class="tries"><img src="images/lostHeart.png" height="35px" widght="30px"></li>';
+                $html .= '<li class="tries animate__animated animate__heartBeat"><img src="images/lostHeart.png" height="35px" widght="30px"></li>';
             }
         }
         $html .= '</ol></div>';
@@ -84,12 +84,12 @@ class Game
     public function gameOver($phrase)
     {
         if ($this->checkForLose($phrase)){
-            $html = '<h1 id="game-over-message overlay">The phrase was: "';
+            $html = '<h1 class="animate__animated animate__shakeX" id="game-over-message overlay">The phrase was: "';
             $html .= $phrase->currentPhrase;
             $html .= '." Better luck next time!</h1>';
             return $html;
         } elseif ($this->checkForWin($phrase)){
-            $html = '<h1 id="game-over-message">Congratulations on guessing: "';
+            $html = '<h1 class="animate__animated animate__bounce" id="game-over-message">Congratulations on guessing: "';
             $html .= $phrase->currentPhrase;
             $html .= '!"</h1>';
             return $html;
