@@ -150,6 +150,11 @@ input[type=submit].correct {
   color: #FFFFFF;
 }
 
+.right {
+  background: #64f778;
+  color: #FFFFFF;
+}
+
 .btn__reset {
   padding: 16px;
   margin: 50px auto;
